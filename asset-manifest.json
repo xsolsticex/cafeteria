@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/cafeteria/static/css/main.1e354a92.css",
-    "main.js": "/cafeteria/static/js/main.2aa7c800.js",
+    "main.js": "/cafeteria/static/js/main.a423d6da.js",
     "static/js/453.6523462a.chunk.js": "/cafeteria/static/js/453.6523462a.chunk.js",
     "service-worker.js": "/cafeteria/service-worker.js",
     "static/media/logo.svg": "/cafeteria/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
     "index.html": "/cafeteria/index.html",
     "main.1e354a92.css.map": "/cafeteria/static/css/main.1e354a92.css.map",
-    "main.2aa7c800.js.map": "/cafeteria/static/js/main.2aa7c800.js.map",
+    "main.a423d6da.js.map": "/cafeteria/static/js/main.a423d6da.js.map",
     "453.6523462a.chunk.js.map": "/cafeteria/static/js/453.6523462a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1e354a92.css",
-    "static/js/main.2aa7c800.js"
+    "static/js/main.a423d6da.js"
   ]
 }
