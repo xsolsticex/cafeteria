@@ -19,9 +19,23 @@ code {
   height: 32px;
   padding: 0 !important;
   display: flex;
+  border: 2px solid black !important;
   align-items: center;
   justify-content: center;
   border-radius: 50%; /* para hacerlos redondos */
+}
+
+.addQty{
+  background-color: rgb(48, 48, 48) !important;
+
+  color: rgb(255, 255, 255) !important;
+}
+
+.subQty{
+  background-color: rgb(231, 95, 95) !important;
+
+  color: rgb(255, 255, 255) !important;
+  font-weight: bold;
 }
 
 .alertMessage {

@@ -45,14 +45,21 @@ function MainContent() {
     // Mantener la proporción del progreso si cambia el budget
     setProgress((prev) => Math.min(prev, numBudget));
 
-    if (numBudget > 0 && progress >= numBudget) {
-      setColor("#f78f8fff");
-      if (!limit) showAlert(true);
-    } else if (progress >= numBudget / 2 && numBudget > 0) {
-      setColor("#f7c68fff");
-    } else {
-      setColor("#7aa0f3ff");
-    }
+if (numBudget > 0 && progress >= numBudget) {
+    // 100% o más → límite alcanzado
+    setColor("#fc4e4eff");
+    
+    if (!limit) showAlert(true);
+  } else if (numBudget > 0 && progress >= numBudget * 0.9) {
+    // 90% o más → alerta intermedia (rojo suave)
+    setColor("#f78f8fff");
+  } else if (numBudget > 0 && progress >= numBudget / 2) {
+    // 50% o más → naranja
+    setColor("#f7c68fff");
+  } else {
+    // Tranquilo
+    setColor("#7aa0f3ff");
+  }
   }, [budget, progress]);
 
   const total = data.reduce((acc, row, i) => {

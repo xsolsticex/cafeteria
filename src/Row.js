@@ -35,6 +35,7 @@ function Row({ row, OnProductAdded, budget }) {
         {/* <span className="qty" contentEditable onKeyDown={e => e.key === 'Enter' && e.preventDefault()}>{qty}</span> */}
         <Button
           className="addQty ms-4 rounded-circle"
+          
           onClick={() => {
             if (budget > 0) {
               setQty(qty + 1);

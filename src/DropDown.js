@@ -47,8 +47,7 @@ function ItemList({ onDataLoaded, onBudgetChanged }) {
   };
 
   const handleTextChange = (event) => {
-    
-    let value = Number(event.target.value.slice(0,3));
+    let value = Number(event.target.value.slice(0, 3));
 
     onBudgetChanged(value);
   };
@@ -57,17 +56,21 @@ function ItemList({ onDataLoaded, onBudgetChanged }) {
       className="d-flex w-100 justify-content-between"
       style={{ marginTop: "25px", marginBottom: "25px" }}
     >
-      <div className="inputFile">
-        <label
-          htmlFor="formFile"
-          style={{ background: "white", borderRadius: 50, padding: 5 }}
-        >
-          <img
-            src={`${process.env.PUBLIC_URL}/upload.png`}
-            alt="upload file icon"
-            width={32}
-          />
-        </label>
+      <div className="inputFile d-flex">
+        <div className="d-flex align-items-center justify-content-between" style={{gap:8}}>
+          <label
+            htmlFor="formFile"
+            style={{ background: "white", borderRadius: 50, padding: 5 }}
+          >
+            <img
+              src={`${process.env.PUBLIC_URL}/upload.png`}
+              alt="upload file icon"
+              width={32}
+            />
+          </label>
+          <span style={{ color: "white" }}> Subir documento</span>
+        </div>
+
         <input
           className="form-control form-control-sm w-50"
           id="formFile"
@@ -81,8 +84,9 @@ function ItemList({ onDataLoaded, onBudgetChanged }) {
         min={0}
         max={999}
         maxLength={3}
+        placeholder="Presupuesto"
         onChange={handleTextChange}
-        style={{ maxWidth: "80px",textAlign:"center" }}
+        style={{ maxWidth: "100px", maxHeight: "50px", textAlign: "center" }}
       />
     </div>
   );
