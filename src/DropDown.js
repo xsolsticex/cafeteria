@@ -13,7 +13,7 @@ let elements = [];
 
 function ItemList({ onDataLoaded, onBudgetChanged }) {
   const [file, setFile] = useState(null);
-  const [budget, setBudget] = useState(0);
+  const [budget, setBudget] = useState(null);
 
   const readFile = (file) => {
     const fileReader = new FileReader();
