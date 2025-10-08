@@ -78,11 +78,11 @@ function ItemList({ onDataLoaded, onBudgetChanged }) {
       </div>
 
       <input
-        type="number"
         min={0}
         max={999}
+        maxLength={3}
         onChange={handleTextChange}
-        style={{ maxWidth: "80px" }}
+        style={{ maxWidth: "80px",textAlign:"center" }}
       />
     </div>
   );

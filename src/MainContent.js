@@ -7,6 +7,8 @@ import ItemList from "./DropDown";
 import { useEffect, useState } from "react";
 import Row from "./Row";
 import Progress from "./Progress";
+import { Alert } from "bootstrap";
+import AlertMessage from "./AlertMessage";
 function MainContent() {
   const [data, setData] = useState([]);
   const [qty, setQty] = useState(0);
@@ -15,6 +17,7 @@ function MainContent() {
   const [progress, setProgress] = useState(0);
   const [budget, setBudget] = useState(0);
   const [progrssColor, setColor] = useState("black");
+  const [limit, showAlert] = useState(false);
 
   useEffect(() => {
     if (!data || data.length === 0) return; // <-- evita NaN cuando aún no hay productos
@@ -30,26 +33,27 @@ function MainContent() {
     setProgress(val);
   }, [cantidades, data, budget]);
 
-useEffect(() => {
-  const numBudget = Number(budget);
+  useEffect(() => {
+    const numBudget = Number(budget);
 
-  if (numBudget === 0) {
-    setProgress(0);
-    setColor("transparent");
-    return;
-  }
+    if (numBudget === 0) {
+      setProgress(0);
+      setColor("transparent");
+      return;
+    }
 
-  // Mantener la proporción del progreso si cambia el budget
-  setProgress((prev) => Math.min(prev, numBudget));
+    // Mantener la proporción del progreso si cambia el budget
+    setProgress((prev) => Math.min(prev, numBudget));
 
-  if (progress >= numBudget - 10) {
-    setColor("#f78f8fff"); // rojo: casi al límite
-  } else if (progress >= numBudget / 2) {
-    setColor("#f7c68fff"); // naranja: sobre mitad
-  } else {
-    setColor("#7aa0f3ff"); // azul: tranquilo
-  }
-}, [budget, progress]);
+    if (numBudget > 0 && progress >= numBudget * 0.8) {
+      setColor("#f78f8fff");
+      if (!limit) showAlert(true);
+    } else if (progress >= numBudget / 2 && numBudget > 0) {
+      setColor("#f7c68fff");
+    } else {
+      setColor("#7aa0f3ff");
+    }
+  }, [budget, progress]);
 
   const total = data.reduce((acc, row, i) => {
     const qty = cantidades[i] || 0;
@@ -61,12 +65,16 @@ useEffect(() => {
   };
   return (
     <Container className="d-flex flex-column align-items-start vw-100 pb-5">
+      <AlertMessage
+        className="alertMessage"
+        show={limit}
+        onShowAlert={showAlert}
+      />
       <ItemList
         className="w-50"
         onDataLoaded={setData}
         onBudgetChanged={setBudget}
       />
-
       <Table striped bordered hover className="w-100 text-center mt-2 mb-4">
         <thead>
           <tr>

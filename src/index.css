@@ -24,9 +24,23 @@ code {
   border-radius: 50%; /* para hacerlos redondos */
 }
 
+.alertMessage {
+  position: fixed !important;
+  top: 50%;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  justify-items: center;
+  align-items: center;
+}
 
-.qty{
-    display: inline-block;
+.alertMessage.hidden {
+  opacity: 0;
+  pointer-events: none; /* <- esto evita que bloquee los clics */
+}
+
+.qty {
+  display: inline-block;
   width: 2ch;
   text-align: center;
 }
@@ -45,20 +59,20 @@ code {
 
 .progress-sticky {
   position: sticky;
-  top: 0;   /* o top:0 si lo quieres arriba */
+  top: 0; /* o top:0 si lo quieres arriba */
   background: white; /* evita que se superponga visualmente con la tabla */
-  padding: 120px 0;   /* separación arriba y abajo */
-  z-index: 10
+  padding: 120px 0; /* separación arriba y abajo */
+  z-index: 10;
 }
 
-.tableData{
+.tableData {
   border-radius: 30px !important;
 }
 
-table{
+table {
   font-size: 0.85rem;
 }
 
-input[type="number"]{
+input[type="number"] {
   text-align: center;
 }

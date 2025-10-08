@@ -1,22 +1,23 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import Header from './Header';
-import reportWebVitals from './reportWebVitals';
-import MainContent from './MainContent';
-import ItemList from './DropDown';
-import Progress from './Progress';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import Header from "./Header";
+import reportWebVitals from "./reportWebVitals";
+import MainContent from "./MainContent";
+import ItemList from "./DropDown";
+import Progress from "./Progress";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import AlertMessage from "./AlertMessage";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-  <Header/>
+  
+    <Header />
 
-  <MainContent/>
-
+    <MainContent />
   </React.StrictMode>
 );
 
@@ -24,5 +25,3 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-
-
