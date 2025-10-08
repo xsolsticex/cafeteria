@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 
-function Row({ row, OnProductAdded }) {
+function Row({ row, OnProductAdded, budget }) {
   const [qty, setQty] = useState(0);
 
   useEffect(() => {
@@ -16,18 +16,30 @@ function Row({ row, OnProductAdded }) {
         <Button
           className="subQty me-4 rounded-circle"
           onClick={() => {
-            qty > 0 && setQty(qty - 1);
+            if (budget > 0) {
+              qty > 0 && setQty(qty - 1);
+            }
           }}
         >
           -
         </Button>
-        <span className="qty">{qty}</span>
+        <input
+          className="qty"
+          value={qty}
+          min={0}
+          max={999}
+          maxLength={3}
+          onChange={(e) => setQty(Number(e.target.value))}
+          style={{ border: "none", background: "transparent", width: 30 }}
+        ></input>
+        {/* <span className="qty" contentEditable onKeyDown={e => e.key === 'Enter' && e.preventDefault()}>{qty}</span> */}
         <Button
           className="addQty ms-4 rounded-circle"
           onClick={() => {
-            setQty(qty + 1);
+            if (budget > 0) {
+              setQty(qty + 1);
+            }
           }}
-          
         >
           +
         </Button>

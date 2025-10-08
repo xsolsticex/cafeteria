@@ -47,11 +47,9 @@ function ItemList({ onDataLoaded, onBudgetChanged }) {
   };
 
   const handleTextChange = (event) => {
-    const value = Number(event.target.value);
-    if (!isNaN(value)) {
-      onBudgetChanged(value);
-    }
-    
+    let value = Number(event.target.value);
+
+    onBudgetChanged(value);
   };
   return (
     <div
@@ -63,8 +61,11 @@ function ItemList({ onDataLoaded, onBudgetChanged }) {
           htmlFor="formFile"
           style={{ background: "white", borderRadius: 50, padding: 5 }}
         >
-          <img src={`${process.env.PUBLIC_URL}/upload.png`} alt="upload file icon" width={32} />
-          
+          <img
+            src={`${process.env.PUBLIC_URL}/upload.png`}
+            alt="upload file icon"
+            width={32}
+          />
         </label>
         <input
           className="form-control form-control-sm w-50"
@@ -77,6 +78,8 @@ function ItemList({ onDataLoaded, onBudgetChanged }) {
 
       <input
         type="number"
+        min={0}
+        max={999}
         onChange={handleTextChange}
         style={{ maxWidth: "80px" }}
       />
