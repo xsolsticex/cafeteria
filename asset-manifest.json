@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/cafeteria/static/css/main.f51ad2cb.css",
-    "main.js": "/cafeteria/static/js/main.25be86fb.js",
+    "main.css": "/cafeteria/static/css/main.1e354a92.css",
+    "main.js": "/cafeteria/static/js/main.2aa7c800.js",
     "static/js/453.6523462a.chunk.js": "/cafeteria/static/js/453.6523462a.chunk.js",
     "service-worker.js": "/cafeteria/service-worker.js",
     "static/media/logo.svg": "/cafeteria/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
     "index.html": "/cafeteria/index.html",
-    "main.f51ad2cb.css.map": "/cafeteria/static/css/main.f51ad2cb.css.map",
-    "main.25be86fb.js.map": "/cafeteria/static/js/main.25be86fb.js.map",
+    "main.1e354a92.css.map": "/cafeteria/static/css/main.1e354a92.css.map",
+    "main.2aa7c800.js.map": "/cafeteria/static/js/main.2aa7c800.js.map",
     "453.6523462a.chunk.js.map": "/cafeteria/static/js/453.6523462a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f51ad2cb.css",
-    "static/js/main.25be86fb.js"
+    "static/css/main.1e354a92.css",
+    "static/js/main.2aa7c800.js"
   ]
 }
