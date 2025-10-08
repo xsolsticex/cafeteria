@@ -47,7 +47,8 @@ function ItemList({ onDataLoaded, onBudgetChanged }) {
   };
 
   const handleTextChange = (event) => {
-    let value = Number(event.target.value);
+    
+    let value = Number(event.target.value.slice(0,3));
 
     onBudgetChanged(value);
   };
@@ -80,7 +81,6 @@ function ItemList({ onDataLoaded, onBudgetChanged }) {
         type="number"
         min={0}
         max={999}
-        maxLength={3}
         onChange={handleTextChange}
         style={{ maxWidth: "80px" }}
       />

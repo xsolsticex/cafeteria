@@ -12,7 +12,7 @@ function Progress({ value,maxValue,color }) {
         <div
           className="progress-bar progress-bar-striped"
           role="progressbar"
-          style={{ width: `${(value / Number(maxValue)) * 100}%`, height: 30,backgroundColor:color}}
+          style={{ width: `${progressPercent}%`, height: 30,backgroundColor:color}}
           aria-valuenow={value}
           aria-valuemin="0"
           aria-valuemax={maxValue}
