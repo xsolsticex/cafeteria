@@ -1,0 +1,11 @@
+.header{
+    background-color: #F0DA9C;
+    justify-items: center;
+    min-height: 50px;
+    max-height: 146px;
+
+}
+
+h1{
+    margin: 0;
+}
