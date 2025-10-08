@@ -45,7 +45,7 @@ function MainContent() {
     // Mantener la proporción del progreso si cambia el budget
     setProgress((prev) => Math.min(prev, numBudget));
 
-    if (numBudget > 0 && progress >= numBudget * 0.8) {
+    if (numBudget > 0 && progress >= numBudget) {
       setColor("#f78f8fff");
       if (!limit) showAlert(true);
     } else if (progress >= numBudget / 2 && numBudget > 0) {
