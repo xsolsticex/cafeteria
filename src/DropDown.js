@@ -82,8 +82,8 @@ function ItemList({ onDataLoaded, onBudgetChanged }) {
 
       <input
         min={0}
-        max={999}
-        maxLength={3}
+        max={9999}
+        maxLength={5}
         placeholder="Presupuesto"
         onChange={handleTextChange}
         style={{ maxWidth: "100px", maxHeight: "50px", textAlign: "center" }}
