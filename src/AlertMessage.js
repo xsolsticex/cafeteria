@@ -9,10 +9,10 @@ function AlertMessage({show,onShowAlert}) {
 
   return createPortal(
     <div className={`alertMessage ${show ? '' : 'hidden'}`} id="alertMessage">
-      <Alert show={show} variant="warning">
+      <Alert show={show} variant="error">
         <AlertHeading>Limite alcanzado</AlertHeading>
         <p>Has superado el limte del presupuesto</p>
-        <Button onClick={() => onShowAlert(false)} variant="outline-success">
+        <Button onClick={() => onShowAlert(false)} variant="outline-error">
           Cerrar
         </Button>
       </Alert>
