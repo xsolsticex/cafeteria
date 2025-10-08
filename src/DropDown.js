@@ -80,6 +80,7 @@ function ItemList({ onDataLoaded, onBudgetChanged }) {
         type="number"
         min={0}
         max={999}
+        maxLength={3}
         onChange={handleTextChange}
         style={{ maxWidth: "80px" }}
       />
