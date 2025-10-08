@@ -63,7 +63,8 @@ function ItemList({ onDataLoaded, onBudgetChanged }) {
           htmlFor="formFile"
           style={{ background: "white", borderRadius: 50, padding: 5 }}
         >
-          <img src="/upload.png" alt="upload file icon" width={32} />
+          <img src={`${process.env.PUBLIC_URL}/upload.png`} alt="upload file icon" width={32} />
+          
         </label>
         <input
           className="form-control form-control-sm w-50"
